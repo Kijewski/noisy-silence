@@ -1,0 +1,63 @@
+[package]
+name = "noisy-silence"
+version = "0.1.0"
+edition = "2024"
+authors = ["René Kijewski <crates.io@k6i.de>"]
+license = "ISC OR MIT OR Apache-2.0"
+rust-version = "1.88.0"
+repository = "https://github.com/Kijewski/noisy-silence"
+description = "Output a continuous stream of (almost) silence"
+
+[dependencies]
+clap = { version = "4.5.54", features = ["cargo", "derive"] }
+ctrlc = { version = "3.5.1", features = ["termination"] }
+displaydoc = "0.2.5"
+nodyn = { version = "0.2.2", default-features = false }
+pretty-error-debug = "0.3.2"
+rand = { version = "0.9.2", default-features = false, features = ["log", "std"] }
+rand_xoshiro = "0.7.0"
+rodio = { version = "0.21.1", default-features = false, features = ["noise", "playback", "tracing"] }
+strum = { version = "0.27.2", features = ["derive"] }
+thiserror = "2.0.17"
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.22", features = ["env-filter"] }
+
+[lints.rust]
+unknown_lints = { level = "allow", priority = -1 }
+unsafe_code = { level = "forbid", priority = -1 }
+
+absolute_paths_not_starting_with_crate = "warn"
+elided_lifetimes_in_paths = "warn"
+explicit_outlives_requirements = "warn"
+meta_variable_misuse = "warn"
+missing_copy_implementations = "warn"
+missing_debug_implementations = "warn"
+missing_docs = "warn"
+non_ascii_idents = "warn"
+noop_method_call = "warn"
+rust_2024_compatibility = "warn"
+single_use_lifetimes = "warn"
+trivial_casts = "warn"
+unreachable_pub = "warn"
+unused_crate_dependencies = "warn"
+unused_extern_crates = "warn"
+unused_lifetimes = "warn"
+unused_results = "warn"
+warnings = "warn"
+
+[lints.clippy]
+collapsible_match = "warn"
+expect_used = "warn"
+match_bool = "warn"
+match_ref_pats = "warn"
+match_same_arms = "warn"
+match_single_binding = "warn"
+needless_bool = "deny"
+needless_late_init = "warn"
+needless_match = "warn"
+redundant_guards = "warn"
+redundant_pattern = "warn"
+redundant_pattern_matching = "warn"
+single_match = "warn"
+single_match_else = "warn"
+unwrap_used = "warn"
